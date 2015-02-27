@@ -1,0 +1,71 @@
+swagger: '2.0'
+info:
+  title: IWAPI
+  description: Infinity Wars unofficial API
+  version: "0.0.1"
+host: projects.seansspace.com
+basePath: /iwapi
+produces:
+  - application/json
+paths:
+  /cards:
+    get:
+      summary: Cards
+      description: Retrieves the data for all the current cards
+      responses:
+        200:
+          description: An array of cards
+  /factions:
+    get:
+      summary: Factions
+      description: Lists all the current factions for cards
+      tags:
+        - Factions
+      responses:
+        200:
+          description: An array of the factions
+  /card/name:
+    get:
+      summary: Cards
+      description: Gets all the cards whos name matches the parameter
+      parameters:
+        - name: Name
+          in: query
+          required: true
+          type: string
+          description: A name or partial name that you would like to search for
+      tags:
+        - Cards
+      responses:
+        200:
+          decription: An array of the mactching cards
+  /card/set:
+    get:
+      summary: Cards
+      description: Gets the cards in the supplied set
+      parameters:
+        - name: set
+          in: query
+          required: true
+          type: string
+          decription: The set of the cards
+      tags:
+        - Cards
+      responses:
+        200:
+          decription: An array of the mactching cards
+  /card:
+    get:
+      summary: Cards
+      description: Get a lit of cards from the passed keys
+      tags:
+        - Cards
+      parameters:
+        - name: keys
+          in: query
+          required: true
+          type: string
+          description: The keys taht you would like to search for seperated by "/"
+      responses:
+        200:
+          description: An array of the matching cards

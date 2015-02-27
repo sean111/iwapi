@@ -1,0 +1,13 @@
+{
+    "name": "sean111/iwapi",
+    "description": "Unofficial Infinity Wars API",
+    "authors": [
+        {
+            "name": "Sean Burke",
+            "email": "sean111@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "~2.5"
+    }
+}
