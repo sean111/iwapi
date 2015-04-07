@@ -8,6 +8,11 @@
         }
     ],
     "require": {
-        "slim/slim": "~2.5"
+        "slim/slim": "~2.6",
+        "illuminate/database": "*"
+    },
+    "autoload": {
+        "files": [ "config.php" ],
+        "classmap": [ "models" ]
     }
 }
