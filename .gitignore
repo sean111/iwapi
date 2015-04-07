@@ -1,5 +1,3 @@
 vendor
 config.php
 *.sublime*
-composer.lock
-*.sublime*
