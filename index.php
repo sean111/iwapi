@@ -2,7 +2,7 @@
 ini_set( 'display_errors', 0 );
 require_once 'vendor/autoload.php';
 
-$lastModifiedDate = '01/02/2015';
+$lastModifiedDate = '04/07/2015';
 $etag = strtotime( $lastModifiedDate );
 
 $app = new \Slim\Slim();
