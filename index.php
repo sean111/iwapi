@@ -49,6 +49,15 @@ $app->get( '/card/:key+', function ( $key ) use ( $etag ) {
     sendResponse( $body, $tag );
 } );
 
+$app->get( '/info', function() use ( $etag ) {
+    global $lastModifiedDate;
+    $tag = 'stats-' . $etag;
+    $array = [];
+    $array['card_data_date'] = $lastModifiedDate;
+    $array['total_cards'] = Card::count();
+    $body = json_encode( $array );
+    sendResponse( $body, $tag );
+} );
 
 $app->run();
 
