@@ -28,6 +28,8 @@ paths:
     get:
       summary: Cards
       description: Gets all the cards whos name matches the parameter
+      tags:
+        - Cards
       parameters:
         - name: Name
           in: query
@@ -38,13 +40,30 @@ paths:
         - Cards
       responses:
         200:
-          decription: An array of the mactching cards
+          description: An array of the mactching cards
+  /card:
+    get:
+      summary: Cards
+      description: Get a lit of cards from the passed keys
+      tags:
+        - Cards
+      parameters:
+        - name: Keys
+          in: query
+          required: true
+          type: string
+          description: The keys taht you would like to search for seperated by "/"
+      responses:
+        200:
+          description: An array of the matching cards
   /card/set:
     get:
       summary: Cards
       description: Gets the cards in the supplied set
-      parameters:
-        - name: set
+      tags:
+        - Cards
+      
+        - name: Set
           in: query
           required: true
           type: string
@@ -53,19 +72,4 @@ paths:
         - Cards
       responses:
         200:
-          decription: An array of the mactching cards
-  /card:
-    get:
-      summary: Cards
-      description: Get a lit of cards from the passed keys
-      tags:
-        - Cards
-      parameters:
-        - name: keys
-          in: query
-          required: true
-          type: string
-          description: The keys taht you would like to search for seperated by "/"
-      responses:
-        200:
-          description: An array of the matching cards
+          description: An array of the mactching cards          
